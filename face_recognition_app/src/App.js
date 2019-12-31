@@ -4,7 +4,6 @@ import Navigation from './components/navigation/Navigation';
 import SignIn from './components/signIn/SignIn';
 import Register from './components/register/Register';
 import FaceRecognition from './components/faceRecognition/FaceRecognition';
-import Logo from './components/logo/Logo';
 import ImageLinkForm from './components/imageLinkForm/ImageLinkForm';
 import Rank from './components/rank/Rank';
 import './App.css';
@@ -125,7 +124,6 @@ class App extends Component {
         {route === 'home'
           ?
           <div>
-            <Logo />
             <Rank name={this.state.user.name} entries={this.state.user.entries} />
             <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
             <FaceRecognition box={box} imageUrl={imageUrl} />
