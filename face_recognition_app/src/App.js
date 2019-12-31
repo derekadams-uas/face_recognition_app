@@ -42,12 +42,6 @@ class App extends Component {
     this.state = initialState;
   }
 
-  componentDidMount() {
-    fetch('https://radiant-harbor-91047.herokuapp.com/')
-      .then(response => response.json())
-      .then(console.log);
-  }
-
   loadUser = (data) => {
     this.setState({
       user: {
