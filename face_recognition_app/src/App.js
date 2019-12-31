@@ -43,7 +43,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://dashboard.heroku.com/apps/radiant-harbor-91047/')
+    fetch('https://radiant-harbor-91047.herokuapp.com//')
       .then(response => response.json())
       .then(console.log);
   }
@@ -83,7 +83,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch('https://dashboard.heroku.com/apps/radiant-harbor-91047/imageurl', {
+    fetch('https://radiant-harbor-91047.herokuapp.com//imageurl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -93,7 +93,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://dashboard.heroku.com/apps/radiant-harbor-91047/image', {
+          fetch('https://radiant-harbor-91047.herokuapp.com//image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
