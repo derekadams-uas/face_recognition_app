@@ -5,6 +5,8 @@ const cors = require('cors');
 const knex = require('knex');
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
+const profile = require('./controllers/profile');
+const image = require('./controllers/image');
 
 const db = knex({
     client: 'pg',
@@ -25,32 +27,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/signin', (req, res) => { signin.handleSignIn(req, res, db, bcrypt) });
-
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) });
-
-app.get('/profile/:id', (req, res) => {
-    const { id } = req.params;
-    db.select('*').from('users').where({ id })
-        .then(user => {
-            if (user.length) {
-                res.json(user[0]);
-            } else {
-                res.status(400).json('Not Found')
-            }
-        })
-        .catch(err => res.status(400).json('Error Getting User'));
-})
-
-app.put('/image', (req, res) => {
-    const { id } = req.body;
-    db('users').where('id', '=', id)
-        .increment('entries', 1)
-        .returning('entries')
-        .then(entries => {
-            res.json(entries[0]);
-        })
-        .catch(err => res.status(400).json('Unable to Get Entry Count'));
-})
+app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db) });
+app.put('/image', (req, res) => { image.handleImage(req, res, db) });
 
 app.listen(3000, () => {
     console.log('App is Running on Port 3000');
