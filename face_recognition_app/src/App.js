@@ -6,6 +6,7 @@ import Register from './components/register/Register';
 import FaceRecognition from './components/faceRecognition/FaceRecognition';
 import ImageLinkForm from './components/imageLinkForm/ImageLinkForm';
 import Rank from './components/rank/Rank';
+import Modal from './components/modal/Modal';
 import './App.css';
 
 const particlesOptions = {
@@ -24,8 +25,8 @@ const initialState = {
   input: '',
   imageUrl: '',
   boxes: [],
-  route: 'home',
-  isSignedIn: true,
+  route: 'signin',
+  isSignedIn: false,
   user: {
     id: '',
     name: '',
