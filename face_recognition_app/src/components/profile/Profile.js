@@ -11,30 +11,30 @@ const Profile = ({ isProfileOpen, toggleModal, user }) => {
                     <h4>Images Submitted: 5</h4>
                     <p>Member Since: January</p>
                     <hr />
-                    <div className="measure">
-                        <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
-                        <input
-                            onChange={this.onNameChange}
-                            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
-                            type="text"
-                            name="name"
-                            id="name"
-                        />
-                        <input
-                            onChange={this.onEmailChange}
-                            className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
-                            type="email"
-                            name="email-address"
-                            id="email-address"
-                        />
-                        <input
-                            onChange={this.onPasswordChange}
-                            className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 hover-black"
-                            type="password"
-                            name="password"
-                            id="password"
-                        />
-                    </div>
+                    <label className="mt2 fw6" htmlFor="user-name">Name:</label>
+                    <input
+                        className="pa2 ba w-100"
+                        placeholder="Name"
+                        type="text"
+                        name="user-name"
+                        id="name"
+                    />
+                    <label className="mt2 fw6" htmlFor="user-age">Age:</label>
+                    <input
+                        className="pa2 ba w-100"
+                        placeholder="Age"
+                        type="text"
+                        name="user-age"
+                        id="age"
+                    />
+                    <label className="mt2 fw6" htmlFor="user-name">Pet:</label>
+                    <input
+                        className="pa2 ba w-100"
+                        placeholder="Pet"
+                        type="text"
+                        name="user-pet"
+                        id="pet"
+                    />
                 </main>
             </article>
         </div>
