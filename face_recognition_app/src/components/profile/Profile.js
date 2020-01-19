@@ -35,9 +35,17 @@ const Profile = ({ isProfileOpen, toggleModal, user }) => {
                         name="user-pet"
                         id="pet"
                     />
+                    <div className="mt4" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                        <button className="b pa2 grow pointer hover-white w-40 bg-light-blue b--black-20">
+                            Save
+                        </button>
+                        <button className="b pa2 grow pointer hover-white w-40 bg-light-red b--black-20">
+                            Cancel
+                        </button>
+                    </div>
                 </main>
             </article>
-        </div>
+        </div >
     )
 }
 
